@@ -20,7 +20,7 @@ test_script:
   - npm run lint && npm test  # скрипт тестирования
 
 environment:
-  my_variable:
+  access_token:
     secure: wgsebYCjjiKhKmCiQkoOo6wo9JwpOQNJl0xt6TVQhOygykH47mzaaFNXTrOPJL7W
 
 on_success: # скрипт деплоя
