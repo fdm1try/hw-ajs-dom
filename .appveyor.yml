@@ -18,3 +18,15 @@ build_script:
 
 test_script:
   - npm run lint && npm test  # скрипт тестирования
+
+environment:
+  my_variable:
+    secure: wgsebYCjjiKhKmCiQkoOo6wo9JwpOQNJl0xt6TVQhOygykH47mzaaFNXTrOPJL7W
+
+on_success: # скрипт деплоя
+  - git config --global credential.helper store
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
+  - git config --global user.email "d.a.fedorov90@gmail.com"
+  - git config --global user.name "fdm1try"
+  - git add dist
+  - git subtree push --prefix dist orogin gh-pages
