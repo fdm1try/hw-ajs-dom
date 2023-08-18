@@ -30,4 +30,5 @@ on_success: # скрипт деплоя
   - git config --global user.name "fdm1try"
   - git branch gh-pages
   - git add dist
+  - git commit 'dist added'
   - git subtree push --prefix dist orogin gh-pages
