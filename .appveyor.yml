@@ -31,4 +31,4 @@ on_success: # скрипт деплоя
   - git branch gh-pages
   - git add dist
   - git commit -m 'dist added'
-  - git subtree push --prefix dist orogin gh-pages
+  - git subtree push --prefix dist origin gh-pages
