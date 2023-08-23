@@ -1,3 +1,9 @@
 import Game from './game';
 
-document.addEventListener('DOMContentLoaded', Game.init);
+const game = new Game();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const gameContainer = document.querySelector('.game-container');
+  game.init(gameContainer);
+  game.run();
+});
